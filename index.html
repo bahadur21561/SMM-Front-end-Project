@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Followers Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <nav class="top-nav">
+                <div class="menu-icon" id="menuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="logo">
+                    <span>Followers Store</span>
+                    <i class="fa-solid fa-rocket" style="color: #6a1b9a;"></i>
+                </div>
+            </nav>
+
+            <div class="mobile-menu" id="mobileMenu">
+                <ul>
+                    <li><a href="#">تسجيل الدخول</a></li>
+                    <li><a href="sing_up.html">انشاء الحساب</a></li>
+                    <li><a href="add_fundes.html">الرصيد</a></li>
+                    <li><a href="service_page.html">الخدمات</a></li>
+                    <li><a href="blog.html">المدونة</a></li>
+                    <li><a href="terms.html">شروط الاستخدام</a></li>
+                    <li><a href="notifications.html">الاشعارات</a></li>
+                    <li><a href="support.html">الدعم الفني</a></li>
+                    <li><a href="privacy.html">سياسة الخصوصية</a></li>
+                    <li><a href="profile.html" class="logout">ادارة الحساب</a></li>
+                </ul>
+            </div>
+            
+            <div class="hero-content">
+                <h1>المنصة رقم 1 عربياً لخدمات التسويق الإلكتروني</h1>
+                <p class="subtitle">جميع خدمات التواصل الاجتماعي في مكان واحد</p>
+                <div class="trust-avatars">
+                    <img src="https://ui-avatars.com/api/?name=A+A&background=random" class="avatar">
+                    <img src="https://ui-avatars.com/api/?name=B+B&background=random" class="avatar">
+                    <img src="https://ui-avatars.com/api/?name=C+C&background=random" class="avatar">
+                    <span class="trust-text">انضم لآلاف العملاء</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="login-section fade-in">
+            <h2 class="section-header">تسجيل الدخول</h2>
+            <div class="login-card">
+                <form action="#">
+                    <div class="input-group">
+                        <label>البريد الإلكتروني</label>
+                        <input type="email" placeholder="ادخل بريدك الإلكتروني" required>
+                    </div>
+                    <div class="input-group">
+                        <label>كلمة المرور</label>
+                        <input type="password" placeholder="ادخل كلمة المرور" required>
+                    </div>
+                    <button type="submit" class="btn-primary">تسجيل الدخول</button>
+                    <div class="form-footer">
+                        <a href="reset_password.html">نسيت كلمة السر؟</a>
+                        <p>ليس لديك حساب؟ <a href="sing_up.html">سجل الآن</a></p>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="social-strip fade-in">
+            <p>كل تسويقك المفضل في مكان واحد</p>
+            <div class="social-icons">
+                <i class="fa-brands fa-instagram" style="color: #E1306C;"></i>
+                <i class="fa-brands fa-facebook" style="color: #1877F2;"></i>
+                <i class="fa-brands fa-youtube" style="color: #FF0000;"></i>
+                <i class="fa-brands fa-tiktok" style="color: #000000;"></i>
+            </div>
+        </section>
+
+        <section class="stats-section fade-in">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>اجمالي الخدمات</h3>
+                    <p class="number">7672 خدمة</p>
+                    <div class="stat-icon"><i class="fa-solid fa-layer-group"></i></div>
+                </div>
+                <div class="stat-card">
+                    <h3>عدد المستخدمين</h3>
+                    <p class="number">+500</p>
+                    <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                </div>
+                <div class="stat-card">
+                    <h3>اجمالي الطلبات</h3>
+                    <p class="number">1560 طلب</p>
+                    <div class="stat-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+                </div>
+                <div class="stat-card">
+                    <h3>طلبات مكتملة</h3>
+                    <p class="number">985 طلب</p>
+                    <div class="stat-icon"><i class="fa-solid fa-check-double"></i></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-section fade-in">
+            <h2 class="section-title">ما يميزنا</h2>
+            <div class="features-row">
+                <div class="feature-item">
+                    <div class="icon-circle green"><i class="fa-solid fa-bolt"></i></div>
+                    <h4>بدء تنفيذ فوري</h4>
+                    <p>بمجرد الطلب يبدأ التنفيذ بأسرع وقت</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon-circle red"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h4>جودة وضمان مضمونة</h4>
+                    <p>نوفر خدمات حقيقية وبجودة عالية</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon-circle yellow"><i class="fa-solid fa-money-bill-wave"></i></div>
+                    <h4>أسعار تنافسية</h4>
+                    <p>أرخص أسعار في السوق حالياً</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section fade-in">
+            <h2 class="section-title">خدماتنا</h2>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-brands fa-instagram"></i></div>
+                <h3>خدمات Instagram</h3>
+                <p>لقد نال انستقرام ثقة الملايين.. احصل على الخدمة الأنسب لك الآن.</p>
+                <div class="slider-dots">
+                    <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="payment-section fade-in">
+            <h2 class="section-title">طرق الدفع</h2>
+            <div class="payment-logos">
+                <i class="fa-brands fa-cc-visa"></i>
+                <i class="fa-brands fa-cc-mastercard"></i>
+                <i class="fa-brands fa-paypal"></i>
+                <i class="fa-brands fa-apple-pay"></i>
+            </div>
+        </section>
+
+        <section class="results-section fade-in">
+            <h2 class="section-title">النتائج</h2>
+            <div class="toggle-switch">
+                <button class="toggle-btn active" id="btn-after">بعد</button>
+                <button class="toggle-btn" id="btn-before">قبل</button>
+            </div>
+            <div class="result-card">
+                <div class="profile-header">
+                    <div class="profile-pic"><i class="fa-regular fa-user"></i></div>
+                    <div class="profile-info">
+                        <h4>Mg15</h4>
+                        <p>منشئ محتوى</p>
+                    </div>
+                </div>
+                <div class="profile-stats">
+                    <div class="stat-box">
+                        <span class="count" id="posts-count">565</span>
+                        <span class="label">منشور</span>
+                    </div>
+                    <div class="stat-box highlight">
+                        <span class="count" id="followers-count">5,659,00</span>
+                        <span class="label">متابع</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="count">250</span>
+                        <span class="label">يتابع</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews-section fade-in">
+            <h2 class="section-title">اراء العملاء</h2>
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="https://ui-avatars.com/api/?name=Ali+M&background=random" alt="User">
+                    <div class="user-details"><h5>علي م.</h5><span>منذ شهر</span></div>
+                </div>
+                <p>الخدمة ممتازة جداً التنفيذ كان سريع.</p>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="review-card" style="margin-top:10px;">
+                <div class="review-header">
+                    <img src="https://ui-avatars.com/api/?name=S+S&background=random" alt="User">
+                    <div class="user-details"><h5>سارة س.</h5><span>منذ اسبوع</span></div>
+                </div>
+                <p>دعم فني محترم جداً وسرعة خيالية.</p>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+            </div>
+        </section>
+
+        <section class="cta-section fade-in">
+            <div class="cta-card">
+                <h2>ابدأ الان</h2>
+                <p>جهز حسابك للانطلاق! سجل الآن وابدأ.</p>
+                <button class="btn-cta">سجل الان !</button>
+            </div>
+        </section>
+        
+        <footer>
+            <p>تواصل معنا</p>
+            <div class="social-links">
+                <i class="fa-brands fa-telegram"></i>
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <p class="copyright">جميع الحقوق محفوظة Followers Store © 2026</p>
+        </footer>
+
+    </div> <script src="js/main.js"></script>
+</body>
+</html>

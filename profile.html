@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Followers Store - إدارة الحساب</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container relative-container">
+        <header>
+            <nav class="top-nav">
+                <div class="menu-icon" id="menuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="logo">
+                    <span>Followers Store</span>
+                    <i class="fa-solid fa-rocket" style="color: #6a1b9a;"></i>
+                </div>
+            </nav>
+            <div class="mobile-menu" id="mobileMenu">
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="service_page.html">الخدمات</a></li>
+                    <li><a href="add_funds.html">شحن الرصيد</a></li>
+                    <li><a href="profile.html">حسابي</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <section class="profile-header-sec">
+            <div class="profile-img-container">
+                <img src="https://ui-avatars.com/api/?name=Mohamed+Ahmed&background=random&size=128" alt="Profile" class="main-profile-img">
+            </div>
+            <button class="btn-change-img">تغيير الصورة</button>
+            <h3 class="user-name-title">محمد أحمد</h3>
+            <p class="user-email-subtitle">Mohamed@gmail.com</p>
+        </section>
+
+        <section class="profile-card">
+            <h4 class="card-title">بيانات المستخدم الأساسية :</h4>
+            
+            <div class="profile-row">
+                <div class="row-label">الاسم بالكامل :</div>
+                <div class="row-value">محمد أحمد عبد الله سيد</div>
+                <div class="row-icon"><i class="fa-solid fa-pen"></i></div>
+            </div>
+
+            <div class="profile-row">
+                <div class="row-label">البريد الالكتروني :</div>
+                <div class="row-value">Mohamed@gmail.com</div>
+                <div class="row-icon"><i class="fa-solid fa-pen"></i></div>
+            </div>
+
+            <div class="profile-row">
+                <div class="row-label">رقم الهاتف :</div>
+                <div class="row-value">01162547859</div>
+                <div class="row-icon"><i class="fa-solid fa-pen"></i></div>
+            </div>
+        </section>
+
+        <section class="profile-card">
+            <h4 class="card-title">الحماية والامان :</h4>
+            
+            <div class="profile-row">
+                <div class="row-label">كلمة المرور :</div>
+                <div class="row-value">***********</div>
+                <div class="row-icon"><i class="fa-solid fa-pen"></i></div>
+            </div>
+
+            <div class="profile-row">
+                <div class="row-label">تفعيل/الغاء الاشعارات</div>
+                <div class="row-toggle">
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="profile-row">
+                <div class="row-label">تفعيل/الغاء التحقق بخطوتين</div>
+                <div class="row-toggle">
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <div class="profile-actions">
+            <button class="btn-primary btn-save" onclick="openModal('saveSuccessModal')">حفظ التعديلات</button>
+            <button class="btn-delete" onclick="openModal('deleteConfirmModal')">حذف الحساب</button>
+        </div>
+
+
+        <div id="deleteConfirmModal" class="modal-overlay">
+            <div class="modal-card">
+                <button class="close-modal" onclick="closeModal('deleteConfirmModal')">×</button>
+                
+                <div class="modal-icon-circle question-icon">
+                    <i class="fa-solid fa-question"></i>
+                </div>
+                
+                <h3 class="modal-text-bold">هل انت متأكد انك تريد حذف هذا الحساب ؟</h3>
+                <p class="modal-text-warn">تحذير : لا يمكن الاستعادة بعد الحذف</p>
+
+                <div class="modal-btns-row">
+                    <button class="btn-confirm-delete" onclick="confirmDelete()">حذف</button>
+                    <button class="btn-cancel" onclick="closeModal('deleteConfirmModal')">الغاء</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="deleteSuccessModal" class="modal-overlay">
+            <div class="modal-card">
+                <h3 class="modal-title-green">تم بنجاح !</h3>
+                <div class="check-circle">
+                    <div class="checkmark"></div>
+                </div>
+                <p class="modal-msg">تم حذف حسابك بنجاح !</p>
+                <a href="sing_up.html" class="btn-primary btn-modal-full">تسجيل الدخول</a>
+            </div>
+        </div>
+
+        <div id="saveSuccessModal" class="modal-overlay">
+            <div class="modal-card">
+                <h3 class="modal-title-green">تم بنجاح !</h3>
+                <div class="check-circle">
+                    <div class="checkmark"></div>
+                </div>
+                <p class="modal-msg">تم حفظ التغييرات</p>
+                <button class="btn-primary btn-modal-full" onclick="closeModal('saveSuccessModal')">التالي</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // دوال التحكم في المودال (Popups)
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        function confirmDelete() {
+            closeModal('deleteConfirmModal'); // نقفل سؤال التأكيد
+            openModal('deleteSuccessModal');  // نفتح رسالة النجاح
+        }
+    </script>
+</body>
+</html>

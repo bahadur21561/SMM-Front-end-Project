@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Followers Store - شحن الرصيد</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <nav class="top-nav">
+                <div class="menu-icon" id="menuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="logo">
+                    <span>Followers Store</span>
+                    <i class="fa-solid fa-rocket" style="color: #6a1b9a;"></i>
+                </div>
+            </nav>
+            <div class="mobile-menu" id="mobileMenu">
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="add_funds.html">شحن الرصيد</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <section class="page-header">
+            <h2 style="color:#6a1b9a; font-weight:800;">شحن الرصيد</h2>
+        </section>
+
+        <section class="balance-section fade-in">
+            <div class="balance-card">
+                <div class="balance-info">
+                    <span>الرصيد الحالي :</span>
+                    <h1 class="balance-amount">250 $</h1>
+                </div>
+                <div class="balance-icon">
+                    <i class="fa-solid fa-wallet"></i>
+                </div>
+            </div>
+            
+            <div class="payment-methods-icons">
+                <i class="fa-brands fa-google-pay"></i>
+                <i class="fa-brands fa-cc-mastercard" style="color: #eb001b;"></i>
+                <i class="fa-brands fa-cc-visa" style="color: #1a1f71;"></i>
+                <i class="fa-brands fa-stripe" style="color: #6772e5;"></i>
+                <i class="fa-brands fa-paypal" style="color: #003087;"></i>
+                <i class="fa-brands fa-apple-pay"></i>
+                <i class="fa-brands fa-amazon-pay"></i>
+            </div>
+        </section>
+
+        <section class="toggle-tabs fade-in">
+            <button class="tab-btn active" onclick="switchTab('addFunds')">شحن رصيد</button>
+            <button class="tab-btn inactive" onclick="switchTab('history')">سجل المدفوعات</button>
+        </section>
+
+        <section id="addFundsSection" class="tab-content active fade-in">
+            <div class="add-funds-form">
+                
+                <div class="input-group">
+                    <label>طريقة الدفع :</label>
+                    <div class="select-wrapper">
+                        <select>
+                            <option>عملاء مصر : محافظ الكترونية</option>
+                            <option>Visa / Mastercard</option>
+                            <option>PayPal</option>
+                            <option>Binance Pay</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down select-arrow"></i>
+                    </div>
+                </div>
+
+                <div class="amount-row">
+                    <div class="input-group">
+                        <label>المبلغ USD :</label>
+                        <input type="number" class="input-rounded" placeholder="0">
+                    </div>
+                    <div class="input-group">
+                        <label>بعد البونص :</label>
+                        <input type="number" class="input-rounded" placeholder="0" readonly style="background:#f9f9f9;">
+                    </div>
+                </div>
+
+                <p class="min-deposit-note">الحد الادنى للشحن 10 $</p>
+
+                <button class="btn-primary btn-pay">دفع</button>
+
+            </div>
+        </section>
+
+        <section id="historySection" class="tab-content" style="display:none;">
+            
+            <div class="history-table-header">
+                <span>رقم العملية</span>
+                <span>المبلغ</span>
+                <span>طريقة الدفع</span>
+                <span>التاريخ</span>
+                <span>الحالة</span>
+            </div>
+
+            <div class="history-list">
+                <div class="history-card-row">
+                    <span class="fw-bold">1</span>
+                    <span>10$</span>
+                    <span>vodafone cash</span>
+                    <span class="date-text">11/25/2025</span>
+                    <span class="status st-completed">مكتمل</span>
+                </div>
+
+                <div class="history-card-row">
+                    <span class="fw-bold">2</span>
+                    <span>100$</span>
+                    <span>instapay</span>
+                    <span class="date-text">1/12/2024</span>
+                    <span class="status st-pending">جاري التنفيذ</span>
+                </div>
+
+                <div class="history-card-row">
+                    <span class="fw-bold">3</span>
+                    <span>140$</span>
+                    <span>paypal</span>
+                    <span class="date-text">6/23/2023</span>
+                    <span class="status st-pending">جاري التنفيذ</span>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // سكريبت التبديل بين التابات
+        function switchTab(tabName) {
+            const addFundsSection = document.getElementById('addFundsSection');
+            const historySection = document.getElementById('historySection');
+            const btns = document.querySelectorAll('.tab-btn');
+
+            if (tabName === 'addFunds') {
+                addFundsSection.style.display = 'block';
+                historySection.style.display = 'none';
+                
+                // تحديث ألوان الأزرار
+                btns[0].classList.add('active');
+                btns[0].classList.remove('inactive');
+                btns[1].classList.add('inactive');
+                btns[1].classList.remove('active');
+            } else {
+                addFundsSection.style.display = 'none';
+                historySection.style.display = 'block';
+
+                // تحديث ألوان الأزرار
+                btns[1].classList.add('active');
+                btns[1].classList.remove('inactive');
+                btns[0].classList.add('inactive');
+                btns[0].classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>

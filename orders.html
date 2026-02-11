@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Followers Store - سجل الطلبات</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <nav class="top-nav">
+                <div class="menu-icon" id="menuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="logo">
+                    <span>Followers Store</span>
+                    <i class="fa-solid fa-rocket" style="color: #6a1b9a;"></i>
+                </div>
+            </nav>
+            <div class="mobile-menu" id="mobileMenu">
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="service_page.html">الخدمات</a></li>
+                    <li><a href="orders_history.html">سجل الطلبات</a></li>
+                    <li><a href="#">الاعدادات</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <section class="page-header">
+            <h2 style="color:#6a1b9a; font-weight:800;">سجل الطلبات</h2>
+            <p style="color:#999; font-size:0.9rem;">هنا تقدر تتابع حالة كل طلب قمت به.</p>
+        </section>
+
+        <section class="filters-section">
+            
+            <div class="filter-row">
+                <h4>حالة الطلب:</h4>
+                <div class="filter-buttons">
+                    <button class="filter-btn active">الكل</button>
+                    <button class="filter-btn">جاري التنفيذ</button>
+                    <button class="filter-btn">مكتمل</button>
+                    <button class="filter-btn">ملغي</button>
+                </div>
+            </div>
+
+            <div class="filter-row">
+                <h4>نوع الخدمة:</h4>
+                <div class="filter-buttons">
+                    <button class="filter-btn">الكل</button>
+                    <button class="filter-btn active-orange">Facebook</button>
+                    <button class="filter-btn">Instagram</button>
+                    <button class="filter-btn">Snapchat</button>
+                </div>
+            </div>
+
+            <div class="filter-row">
+                <h4>حسب التاريخ:</h4>
+                <div class="filter-buttons">
+                    <button class="filter-btn">الكل</button>
+                    <button class="filter-btn active-orange">اليوم</button>
+                    <button class="filter-btn">هذا الأسبوع</button>
+                    <button class="filter-btn">هذا الشهر</button>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="orders-list fade-in">
+            
+            <div class="orders-table-header">
+                <span>رقم الطلب</span>
+                <span>الباكدج</span>
+                <span>القسم</span>
+                <span>التاريخ</span>
+                <span>السعر</span>
+                <span>الحالة</span>
+            </div>
+
+            <div class="order-card-row">
+                <span class="fw-bold">1</span>
+                <span>باكدج 1#</span>
+                <span>instagram</span>
+                <span class="date-text">11/25/2025</span>
+                <span>$10</span>
+                <span class="status st-completed">مكتمل</span>
+            </div>
+
+            <div class="order-card-row">
+                <span class="fw-bold">2</span>
+                <span>باكدج 2#</span>
+                <span>Snapchat</span>
+                <span class="date-text">1/12/2024</span>
+                <span>$15</span>
+                <span class="status st-pending">جاري التنفيذ</span>
+            </div>
+
+            <div class="order-card-row">
+                <span class="fw-bold">3</span>
+                <span>باكدج 1#</span>
+                <span>facebook</span>
+                <span class="date-text">6/23/2023</span>
+                <span>$10</span>
+                <span class="status st-pending">جاري التنفيذ</span>
+            </div>
+
+            <div class="order-card-row">
+                <span class="fw-bold">4</span>
+                <span>باكدج 3#</span>
+                <span>instagram</span>
+                <span class="date-text">6/23/2023</span>
+                <span>$20</span>
+                <span class="status st-cancelled">ملغي</span>
+            </div>
+
+            <div class="order-card-row">
+                <span class="fw-bold">5</span>
+                <span>باكدج 1#</span>
+                <span>facebook</span>
+                <span class="date-text">6/23/2023</span>
+                <span>$10</span>
+                <span class="status st-completed">مكتمل</span>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // شيل الكلاس من اخواته في نفس المجموعة
+                let siblings = this.parentElement.querySelectorAll('.filter-btn');
+                siblings.forEach(sb => sb.classList.remove('active', 'active-orange'));
+                
+                // ضيف الكلاس للزرار ده (لو برتقالي أو عادي حسب مكانه)
+                if(this.parentElement.parentElement.innerHTML.includes('نوع الخدمة') || this.parentElement.parentElement.innerHTML.includes('حسب التاريخ')) {
+                    this.classList.add('active-orange');
+                } else {
+                    this.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
