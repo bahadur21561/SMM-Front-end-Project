@@ -1,78 +1,93 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Followers Store - طلب الخدمة</title>
+    <title>Followers Store - Place Order</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            direction: ltr !important;
+            text-align: left !important;
+            font-family: 'Poppins', sans-serif;
+        }
+        .order-section, .input-group, footer {
+            direction: ltr !important;
+            text-align: left !important;
+        }
+        .input-group label, .input-group input {
+            text-align: left !important;
+        }
+    </style>
 </head>
 <body>
 
     <div class="container">
         <header>
             <nav class="top-nav">
+                <div class="logo">
+                    <i class="fa-solid fa-rocket" style="color: #6a1b9a;"></i>
+                    <span>Followers Store</span>
+                </div>
                 <div class="menu-icon" id="menuBtn">
                     <i class="fa-solid fa-bars"></i>
-                </div>
-                <div class="logo">
-                    <span>Followers Store</span>
-                    <i class="fa-solid fa-rocket" style="color: #6a1b9a;"></i>
                 </div>
             </nav>
             <div class="mobile-menu" id="mobileMenu">
                 <ul>
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><a href="sing_up.html">انشاء الحساب</a></li>
-                    <li><a href="service_page.html">الخدمات</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sing_up.html">Register</a></li>
+                    <li><a href="service_page.html">Services</a></li>
                 </ul>
             </div>
         </header>
 
         <section class="order-section fade-in">
-            <h2 class="page-title-simple">طلب الخدمة</h2>
-            <p class="section-desc text-center">املأ البيانات أدناه لإكمال طلبك والحصول على الخدمة بسرعة وأمان.</p>
+            <h2 class="page-title-simple">Order Service</h2>
+            <p class="section-desc text-center">Fill in the details below to complete your order quickly and securely.</p>
 
-            <div class="signup-card"> <form id="orderForm">
+            <div class="signup-card">
+                <form id="orderForm">
                     <div class="input-group">
-                        <label class="text-white">اسم المستخدم</label>
+                        <label class="text-white">Username</label>
                         <input type="text" value="Mg128s" readonly class="input-display">
                     </div>
 
                     <div class="input-group">
-                        <label class="text-white">القسم</label>
+                        <label class="text-white">Category</label>
                         <input type="text" value="Snapchat" readonly class="input-display">
                     </div>
 
                     <div class="input-group">
-                        <label class="text-white">الباكدج المختار</label>
-                        <input type="text" value="باكدج 1#" readonly class="input-display">
+                        <label class="text-white">Selected Package</label>
+                        <input type="text" value="Package #1" readonly class="input-display">
                     </div>
 
                     <div class="input-group">
-                        <label class="text-white">عدد المتابعين المطلوب</label>
-                        <input type="text" value="500 متابع" readonly class="input-display">
+                        <label class="text-white">Followers Quantity</label>
+                        <input type="text" value="500 Followers" readonly class="input-display">
                     </div>
 
                     <div class="input-group">
-                        <label class="text-white">البريد الإلكتروني</label>
+                        <label class="text-white">Email Address</label>
                         <input type="email" value="Mg128s@gmail.com" readonly class="input-display">
                     </div>
 
                     <div class="input-group">
-                        <label class="text-white">ثمن الطلب</label>
-                        <input type="text" value="10$" readonly class="input-display">
+                        <label class="text-white">Order Price</label>
+                        <input type="text" value="$10" readonly class="input-display">
                     </div>
 
                     <div class="input-group">
-                        <label class="text-white">الرابط</label>
-                        <input type="url" placeholder="ضع رابط الحساب هنا" required class="input-display editable">
+                        <label class="text-white">Link / URL</label>
+                        <input type="url" placeholder="Paste your profile link here" required class="input-display editable">
                     </div>
 
-                    <button type="submit" class="btn-primary signup-btn">ارسال الطلب</button>
+                    <button type="submit" class="btn-primary signup-btn">Submit Order</button>
                 </form>
             </div>
         </section>
@@ -82,9 +97,9 @@
                 <i class="fa-solid fa-rocket" style="color: #6a1b9a;"></i> 
                 <strong>Followers Store</strong>
             </div>
-            <p class="copyright">كل أدواتك الرقمية تحت سقف واحد.</p>
+            <p class="copyright">All your digital growth tools under one roof.</p>
             <div class="footer-contact">
-                <h4>تواصل معنا</h4>
+                <h4>Contact Us</h4>
                 <div class="social-links">
                     <a href="#"><i class="fa-brands fa-telegram"></i></a>
                     <a href="#"><i class="fa-brands fa-facebook"></i></a>
@@ -96,10 +111,10 @@
     </div>
     <script src="js/main.js"></script>
     <script>
-        // سكريبت بسيط لتحويل المستخدم لصفحة النجاح عند الضغط
+        // Form submit handler to redirect to order success page
         document.getElementById('orderForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // منع إعادة تحميل الصفحة
-            window.location.href = 'order_success.html'; // الانتقال لصفحة النجاح
+            e.preventDefault(); // Prevent page refresh
+            window.location.href = 'order_success.html'; // Redirect to order success page
         });
     </script>
 </body>
