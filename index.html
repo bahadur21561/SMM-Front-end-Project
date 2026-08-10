@@ -9,18 +9,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            direction: ltr !important;
+            text-align: left !important;
+            font-family: 'Poppins', sans-serif;
+        }
+        .input-group label, .input-group input {
+            text-align: left !important;
+        }
+        .form-footer {
+            text-align: center;
+            direction: ltr !important;
+        }
+    </style>
 </head>
 <body>
 
     <div class="container">
         <header>
             <nav class="top-nav">
+                <div class="logo">
+                    <i class="fa-solid fa-rocket" style="color: #6a1b9a;"></i>
+                    <span>Followers Store</span>
+                </div>
                 <div class="menu-icon" id="menuBtn">
                     <i class="fa-solid fa-bars"></i>
-                </div>
-                <div class="logo">
-                    <span>Followers Store</span>
-                    <i class="fa-solid fa-rocket" style="color: #6a1b9a;"></i>
                 </div>
             </nav>
 
@@ -43,9 +57,9 @@
                 <h1>#1 Social Media Marketing Platform</h1>
                 <p class="subtitle">All Social Media Services In One Place</p>
                 <div class="trust-avatars">
-                    <img src="https://ui-avatars.com/api/?name=A+A&background=random" class="avatar">
-                    <img src="https://ui-avatars.com/api/?name=B+B&background=random" class="avatar">
-                    <img src="https://ui-avatars.com/api/?name=C+C&background=random" class="avatar">
+                    <img src="https://ui-avatars.com/api/?name=A+A&background=random" class="avatar" alt="User Avatar">
+                    <img src="https://ui-avatars.com/api/?name=B+B&background=random" class="avatar" alt="User Avatar">
+                    <img src="https://ui-avatars.com/api/?name=C+C&background=random" class="avatar" alt="User Avatar">
                     <span class="trust-text">Join thousands of happy clients</span>
                 </div>
             </div>
@@ -65,7 +79,7 @@
                     </div>
                     <button type="submit" class="btn-primary">Sign In</button>
                     <div class="form-footer">
-                        <a href="reset_password.html">Forgot Password?</a>
+                        <p><a href="reset_password.html">Forgot Password?</a></p>
                         <p>Don't have an account? <a href="sing_up.html">Register Now</a></p>
                     </div>
                 </form>
@@ -218,6 +232,7 @@
             <p class="copyright">All Rights Reserved Followers Store © 2026</p>
         </footer>
 
-    </div> <script src="js/main.js"></script>
+    </div> 
+    <script src="js/main.js"></script>
 </body>
 </html>
