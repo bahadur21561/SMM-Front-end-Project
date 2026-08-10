@@ -1,117 +1,138 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Followers Store - انشاء حساب</title>
+    <title>Followers Store - Sign Up</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            direction: ltr !important;
+            text-align: left !important;
+            font-family: 'Poppins', sans-serif;
+        }
+        .signup-section, .signup-card, footer {
+            direction: ltr !important;
+            text-align: left !important;
+        }
+        .input-group label {
+            text-align: left !important;
+        }
+        .form-footer {
+            text-align: center !important;
+        }
+        .phone-row {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
 </head>
 <body>
 
     <div class="container">
         <header>
             <nav class="top-nav">
+                <div class="logo">
+                    <i class="fa-solid fa-rocket" style="color: #6a1b9a;"></i>
+                    <span>Followers Store</span>
+                </div>
                 <div class="menu-icon" id="menuBtn">
                     <i class="fa-solid fa-bars"></i>
-                </div>
-                <div class="logo">
-                    <span>Followers Store</span>
-                    <i class="fa-solid fa-rocket" style="color: #6a1b9a;"></i>
                 </div>
             </nav>
 
             <div class="mobile-menu" id="mobileMenu">
                 <ul>
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><a href="#">تسجيل الدخول</a></li>
-                    <li><a href="#">انشاء الحساب</a></li>
-                    <li><a href="#">الخدمات</a></li>
-                    <li><a href="#">الدعم الفني</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Login</a></li>
+                    <li><a href="sing_up.html">Sign Up</a></li>
+                    <li><a href="service_page.html">Services</a></li>
+                    <li><a href="support.html">Support</a></li>
                 </ul>
             </div>
         </header>
 
-<section class="signup-section">
+        <section class="signup-section">
             <div class="page-title">
-                <h2>انشاء حساب</h2>
-                <p>جميع التواصل الاجتماعي في مكان واحد</p>
+                <h2>Create an Account</h2>
+                <p>All your social media tools in one place</p>
             </div>
 
             <div class="signup-card">
                 <form action="#">
                     <div class="input-group">
-                        <label>اسم المستخدم</label>
+                        <label>Username</label>
                         <div class="input-with-icon">
-                            <input type="text" placeholder="أدخل اسم المستخدم" required>
+                            <input type="text" placeholder="Enter username" required>
                             <i class="fa-solid fa-pen"></i>
                         </div>
                     </div>
 
                     <div class="input-group">
-                        <label>الاسم الاول</label>
+                        <label>First Name</label>
                         <div class="input-with-icon">
-                            <input type="text" placeholder="أدخل الاسم الاول" required>
+                            <input type="text" placeholder="Enter first name" required>
                             <i class="fa-solid fa-user"></i>
                         </div>
                     </div>
 
                     <div class="input-group">
-                        <label>الاسم الاخير</label>
+                        <label>Last Name</label>
                         <div class="input-with-icon">
-                            <input type="text" placeholder="أدخل الاسم الاخير" required>
+                            <input type="text" placeholder="Enter last name" required>
                             <i class="fa-solid fa-user"></i>
                         </div>
                     </div>
 
                     <div class="phone-row">
                         <div class="input-group phone-input">
-                            <label>الهاتف</label>
+                            <label>Phone Number</label>
                             <div class="input-with-icon">
-                                <input type="tel" placeholder="أدخل رقم الهاتف" required>
+                                <input type="tel" placeholder="Enter phone number" required>
                                 <i class="fa-solid fa-phone"></i>
                             </div>
                         </div>
                         <div class="input-group country-code">
-                            <label>الرمز</label>
+                            <label>Code</label>
                             <div class="code-select">
-                                <img src="https://flagcdn.com/w40/eg.png" alt="Egypt" width="20">
+                                <img src="https://flagcdn.com/w40/eg.png" alt="Country Code" width="20">
                                 <i class="fa-solid fa-chevron-down"></i>
                             </div>
                         </div>
                     </div>
 
                     <div class="input-group">
-                        <label>البريد الإلكتروني</label>
+                        <label>Email Address</label>
                         <div class="input-with-icon">
-                            <input type="email" placeholder="أدخل بريدك الإلكتروني" required>
+                            <input type="email" placeholder="Enter your email address" required>
                             <i class="fa-solid fa-envelope"></i>
                         </div>
                     </div>
 
                     <div class="input-group">
-                        <label>كلمة المرور</label>
+                        <label>Password</label>
                         <div class="input-with-icon">
-                            <input type="password" placeholder="أدخل كلمة المرور الخاصة بك" required>
+                            <input type="password" placeholder="Enter your password" required>
                             <i class="fa-solid fa-lock"></i>
                         </div>
                     </div>
 
                     <div class="input-group">
-                        <label>تأكيد كلمة المرور</label>
+                        <label>Confirm Password</label>
                         <div class="input-with-icon">
-                            <input type="password" placeholder="اعد ادخال كلمة المرور" required>
+                            <input type="password" placeholder="Re-enter your password" required>
                             <i class="fa-solid fa-lock"></i>
                         </div>
                     </div>
 
-                    <button type="submit" class="btn-primary signup-btn">انشاء الحساب</button>
+                    <button type="submit" class="btn-primary signup-btn">Sign Up</button>
                     
                     <div class="form-footer">
-                        <p>هل لديك حساب بالفعل ؟ <a href="index.html">تسجيل الدخول</a></p>
+                        <p>Already have an account? <a href="index.html">Login</a></p>
                     </div>
                 </form>
             </div>
@@ -122,16 +143,16 @@
                 <i class="fa-solid fa-rocket" style="color: #6a1b9a;"></i> 
                 <strong>Followers Store</strong>
             </div>
-            <p class="copyright">كل أدواتك الرقمية تحت سقف واحد - إدارة جميع حساباتك من مكان واحد.</p>
+            <p class="copyright">All your digital tools under one roof — manage all your accounts from one place.</p>
             
             <div class="footer-contact">
-                <h4>تواصل معنا</h4>
+                <h4>Contact Us</h4>
                 <div class="social-links">
                     <a href="#"><i class="fa-brands fa-telegram"></i></a>
                     <a href="#"><i class="fa-brands fa-facebook"></i></a>
                     <a href="#"><i class="fa-brands fa-instagram"></i></a>
                 </div>
-                <p class="support-text"><i class="fa-solid fa-headset"></i> تواصل مع الدعم الفني</p>
+                <p class="support-text"><i class="fa-solid fa-headset"></i> Contact Technical Support</p>
             </div>
         </footer>
 
