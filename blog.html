@@ -1,42 +1,59 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Followers Store - المدونة</title>
+    <title>Followers Store - Blog</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            direction: ltr !important;
+            text-align: left !important;
+            font-family: 'Poppins', sans-serif;
+        }
+        .blog-hero, .blog-card, footer {
+            direction: ltr !important;
+            text-align: left !important;
+        }
+        .blog-card {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    </style>
 </head>
 <body>
 
     <div class="container">
         <header>
             <nav class="top-nav">
+                <div class="logo">
+                    <i class="fa-solid fa-rocket" style="color: #6a1b9a;"></i>
+                    <span>Followers Store</span>
+                </div>
                 <div class="menu-icon" id="menuBtn">
                     <i class="fa-solid fa-bars"></i>
-                </div>
-                <div class="logo">
-                    <span>Followers Store</span>
-                    <i class="fa-solid fa-rocket" style="color: #6a1b9a;"></i>
                 </div>
             </nav>
 
             <div class="mobile-menu" id="mobileMenu">
                 <ul>
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><a href="sing_up.html">انشاء الحساب</a></li> <li><a href="blog.html">المدونة</a></li>
-                    <li><a href="#">الخدمات</a></li>
-                    <li><a href="#">الدعم الفني</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sing_up.html">Register</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="service_page.html">Services</a></li>
+                    <li><a href="support.html">Support</a></li>
                 </ul>
             </div>
         </header>
 
         <section class="blog-hero fade-in">
             <div class="hero-overlay">
-                <h2>اكتشف مقالات ونصائح جديدة يومياً حول أحدث المواضيع.</h2>
+                <h2>Discover daily articles and insights on the latest digital topics.</h2>
             </div>
         </section>
 
@@ -46,27 +63,27 @@
                 <div class="blog-img">
                     <img src="https://cdn-icons-png.flaticon.com/512/2721/2721291.png" alt="SEO" style="width: 80px; padding: 10px; background:white; border-radius:15px;">
                 </div>
-                <h3>تحسين محركات البحث (SEO)</h3>
-                <p>تحسين محركات البحث (SEO) هو عملية تحسين موقعك أو محتواك على الإنترنت ليظهر في نتائج البحث الأولى على جوجل ومحركات البحث الأخرى.</p>
-                <button class="btn-read-more">اقرأ المزيد</button>
+                <h3>Search Engine Optimization (SEO)</h3>
+                <p>Search Engine Optimization (SEO) is the process of improving your website or content to rank higher in search engine results like Google and Bing.</p>
+                <button class="btn-read-more">Read More</button>
             </div>
 
             <div class="blog-card fade-in">
                 <div class="blog-img">
                     <i class="fa-brands fa-facebook" style="font-size: 5rem; color: #fff;"></i>
                 </div>
-                <h3>معلومات عامة عن الفيسبوك</h3>
-                <p>فيسبوك هو منصة تواصل اجتماعي أمريكية تأسست عام 2004 على يد مارك زوكربرغ، ويعتبر واحداً من أكبر المواقع في العالم من حيث عدد المستخدمين.</p>
-                <button class="btn-read-more">اقرأ المزيد</button>
+                <h3>General Guide to Facebook</h3>
+                <p>Facebook is an American social media platform founded in 2004 by Mark Zuckerberg, standing as one of the largest platforms globally by user count.</p>
+                <button class="btn-read-more">Read More</button>
             </div>
 
             <div class="blog-card fade-in">
                 <div class="blog-img">
                     <i class="fa-solid fa-bullhorn" style="font-size: 4rem; color: #fff;"></i>
                 </div>
-                <h3>التسويق الالكتروني</h3>
-                <p>التسويق الإلكتروني (Digital Marketing) هو استخدام الإنترنت والتقنيات الرقمية للترويج للمنتجات والخدمات، واستهداف العملاء المحتملين بطريقة مباشرة.</p>
-                <button class="btn-read-more">اقرأ المزيد</button>
+                <h3>Digital Marketing Overview</h3>
+                <p>Digital Marketing uses online channels and digital technologies to promote products and services, directly engaging targeted potential clients.</p>
+                <button class="btn-read-more">Read More</button>
             </div>
 
         </section>
@@ -76,16 +93,16 @@
                 <i class="fa-solid fa-rocket" style="color: #6a1b9a;"></i> 
                 <strong>Followers Store</strong>
             </div>
-            <p class="copyright">كل أدواتك الرقمية تحت سقف واحد - إدارة جميع حساباتك من مكان واحد.</p>
+            <p class="copyright">All your digital growth tools under one roof — manage all your accounts from a single place.</p>
             
             <div class="footer-contact">
-                <h4>تواصل معنا</h4>
+                <h4>Contact Us</h4>
                 <div class="social-links">
                     <a href="#"><i class="fa-brands fa-telegram"></i></a>
                     <a href="#"><i class="fa-brands fa-facebook"></i></a>
                     <a href="#"><i class="fa-brands fa-instagram"></i></a>
                 </div>
-                <p class="support-text"><i class="fa-solid fa-headset"></i> تواصل مع الدعم الفني</p>
+                <p class="support-text"><i class="fa-solid fa-headset"></i> Contact Technical Support</p>
             </div>
         </footer>
 
