@@ -1,20 +1,38 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Followers Store - الدعم الفني</title>
+    <title>Followers Store - Technical Support</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            direction: ltr !important;
+            text-align: left !important;
+            font-family: 'Poppins', sans-serif;
+        }
+        .chat-header, .chat-body, .chat-footer {
+            direction: ltr !important;
+        }
+        .message.incoming .msg-content {
+            text-align: left !important;
+        }
+        .message.outgoing .msg-content {
+            text-align: left !important;
+        }
+    </style>
 </head>
-<body class="chat-bg"> <div class="container chat-container">
+<body class="chat-bg"> 
+
+    <div class="container chat-container">
         
         <div class="chat-header">
             <div class="header-right">
-                <a href="index.html" class="back-btn"><i class="fa-solid fa-chevron-right"></i></a>
+                <a href="index.html" class="back-btn"><i class="fa-solid fa-chevron-left"></i></a>
                 <h2>Support</h2>
             </div>
             <div class="header-left">
@@ -28,14 +46,14 @@
             <div class="message incoming">
                 <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="Support" class="msg-avatar">
                 <div class="msg-content">
-                    <p>أهلاً، كيف أقدر أساعدك؟</p>
+                    <p>Hello! How can I help you today?</p>
                 </div>
                 <div class="msg-reaction-add"><i class="fa-regular fa-face-smile"></i></div>
             </div>
 
             <div class="message outgoing">
                 <div class="msg-content">
-                    <p>أواجه مشكلة عند محاولة شراء باكدج Instagram.</p>
+                    <p>I'm facing an issue while trying to purchase an Instagram package.</p>
                 </div>
                 <img src="https://ui-avatars.com/api/?name=Mostafa&background=random" alt="User" class="msg-avatar">
                 <div class="msg-reaction-add"><i class="fa-regular fa-face-smile"></i></div>
@@ -46,7 +64,7 @@
             </div>
 
             <div class="typing-indicator">
-                <p>محمد يكتب الان .....</p>
+                <p>Mohamed is typing.....</p>
             </div>
 
         </div>
@@ -54,7 +72,7 @@
         <div class="chat-footer">
             <button class="mic-btn"><i class="fa-solid fa-microphone"></i></button>
             <div class="input-wrapper">
-                <input type="text" placeholder="اكتب رسالتك ...">
+                <input type="text" placeholder="Type your message...">
             </div>
             <button class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
         </div>
