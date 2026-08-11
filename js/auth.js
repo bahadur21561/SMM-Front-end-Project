@@ -56,7 +56,7 @@ async function signUpUser(email, password, username, firstName, lastName, phone)
   }
 }
 
-// Log In Logic
+// Updated Login Function
 async function loginUser(email, password) {
   try {
     const { data, error } = await supabaseClient.auth.signInWithPassword({
@@ -68,9 +68,11 @@ async function loginUser(email, password) {
       alert("Login failed: " + error.message);
     } else {
       alert("Logged in successfully!");
-      window.location.href = "index.html";
+      // Login hone ke baad Dashboard / Order Request page par redirect karein
+      window.location.href = "order_request.html"; 
     }
   } catch(err) {
     alert("Error: " + err.message);
   }
 }
+
