@@ -40,7 +40,7 @@
 
             <div class="mobile-menu" id="mobileMenu">
                 <ul>
-                    <li><a href="#">Login</a></li>
+                    <li><a href="index.html">Login</a></li>
                     <li><a href="sing_up.html">Register</a></li>
                     <li><a href="add_fundes.html">Add Funds</a></li>
                     <li><a href="service_page.html">Services</a></li>
@@ -68,14 +68,14 @@
         <section class="login-section fade-in">
             <h2 class="section-header">Sign In</h2>
             <div class="login-card">
-                <form action="#">
+                <form id="loginForm">
                     <div class="input-group">
                         <label>Email Address</label>
-                        <input type="email" placeholder="Enter your email" required>
+                        <input type="email" id="login-email" placeholder="Enter your email" required>
                     </div>
                     <div class="input-group">
                         <label>Password</label>
-                        <input type="password" placeholder="Enter your password" required>
+                        <input type="password" id="login-password" placeholder="Enter your password" required>
                     </div>
                     <button type="submit" class="btn-primary">Sign In</button>
                     <div class="form-footer">
@@ -219,7 +219,7 @@
             <div class="cta-card">
                 <h2>Get Started Now</h2>
                 <p>Boost your social media presence today! Register and start ordering.</p>
-                <button class="btn-cta">Sign Up Now!</button>
+                <button class="btn-cta" onclick="window.location.href='sing_up.html'">Sign Up Now!</button>
             </div>
         </section>
         
@@ -233,6 +233,21 @@
         </footer>
 
     </div> 
+
+    <!-- Supabase JS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-config.js"></script>
+    <script src="js/auth.js"></script>
     <script src="js/main.js"></script>
+
+    <!-- Form Submit Handler -->
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            loginUser(email, password);
+        });
+    </script>
 </body>
 </html>
