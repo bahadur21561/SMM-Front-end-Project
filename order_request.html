@@ -3,25 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Followers Store - Place Order</title>
+    <title>Followers Store - New Order</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        body {
-            direction: ltr !important;
-            text-align: left !important;
-            font-family: 'Poppins', sans-serif;
-        }
-        .order-section, .input-group, footer {
-            direction: ltr !important;
-            text-align: left !important;
-        }
-        .input-group label, .input-group input {
-            text-align: left !important;
-        }
+        body { direction: ltr !important; text-align: left !important; font-family: 'Poppins', sans-serif; }
+        .input-group label { text-align: left !important; }
+        select, input { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; margin-top: 5px; }
     </style>
 </head>
 <body>
@@ -37,85 +28,71 @@
                     <i class="fa-solid fa-bars"></i>
                 </div>
             </nav>
+
+            <!-- Corrected Logged In Mobile Menu -->
             <div class="mobile-menu" id="mobileMenu">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="sing_up.html">Register</a></li>
+                    <li><a href="order_request.html">New Order</a></li>
+                    <li><a href="orders.html">My Orders</a></li>
+                    <li><a href="add_fundes.html">Add Funds</a></li>
                     <li><a href="service_page.html">Services</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="#" id="logoutBtn" style="color: #ff4d4d;">Logout</a></li>
                 </ul>
             </div>
         </header>
 
-        <section class="order-section fade-in">
-            <h2 class="page-title-simple">Order Service</h2>
-            <p class="section-desc text-center">Fill in the details below to complete your order quickly and securely.</p>
-
-            <div class="signup-card">
+        <section class="order-section" style="padding: 20px;">
+            <h2 style="text-align: center; margin-bottom: 20px;">Place New Order</h2>
+            
+            <div class="order-card">
                 <form id="orderForm">
+                    <!-- Dynamic Category Dropdown -->
                     <div class="input-group">
-                        <label class="text-white">Username</label>
-                        <input type="text" value="Mg128s" readonly class="input-display">
+                        <label>Category</label>
+                        <select id="categorySelect" required>
+                            <option value="">Loading categories...</option>
+                        </select>
                     </div>
 
-                    <div class="input-group">
-                        <label class="text-white">Category</label>
-                        <input type="text" value="Snapchat" readonly class="input-display">
+                    <!-- Dynamic Service Dropdown -->
+                    <div class="input-group" style="margin-top: 15px;">
+                        <label>Select Service / Package</label>
+                        <select id="serviceSelect" required>
+                            <option value="">Select Category First</option>
+                        </select>
                     </div>
 
-                    <div class="input-group">
-                        <label class="text-white">Selected Package</label>
-                        <input type="text" value="Package #1" readonly class="input-display">
+                    <!-- Quantity Input -->
+                    <div class="input-group" style="margin-top: 15px;">
+                        <label>Quantity</label>
+                        <input type="number" id="orderQuantity" placeholder="Enter quantity" min="100" required>
                     </div>
 
-                    <div class="input-group">
-                        <label class="text-white">Followers Quantity</label>
-                        <input type="text" value="500 Followers" readonly class="input-display">
+                    <!-- Dynamic Calculated Price -->
+                    <div class="input-group" style="margin-top: 15px;">
+                        <label>Total Price ($)</label>
+                        <input type="text" id="orderPrice" value="$0.00" readonly style="background-color: #f0f0f0;">
                     </div>
 
-                    <div class="input-group">
-                        <label class="text-white">Email Address</label>
-                        <input type="email" value="Mg128s@gmail.com" readonly class="input-display">
+                    <!-- Target Link -->
+                    <div class="input-group" style="margin-top: 15px;">
+                        <label>Target Link / Username</label>
+                        <input type="url" id="targetLink" placeholder="Paste your profile/post link here" required>
                     </div>
 
-                    <div class="input-group">
-                        <label class="text-white">Order Price</label>
-                        <input type="text" value="$10" readonly class="input-display">
-                    </div>
-
-                    <div class="input-group">
-                        <label class="text-white">Link / URL</label>
-                        <input type="url" placeholder="Paste your profile link here" required class="input-display editable">
-                    </div>
-
-                    <button type="submit" class="btn-primary signup-btn">Submit Order</button>
+                    <button type="submit" class="btn-primary" style="margin-top: 20px; width: 100%;">Submit Order</button>
                 </form>
             </div>
         </section>
-
-        <footer>
-            <div class="footer-logo">
-                <i class="fa-solid fa-rocket" style="color: #6a1b9a;"></i> 
-                <strong>Followers Store</strong>
-            </div>
-            <p class="copyright">All your digital growth tools under one roof.</p>
-            <div class="footer-contact">
-                <h4>Contact Us</h4>
-                <div class="social-links">
-                    <a href="#"><i class="fa-brands fa-telegram"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-            </div>
-        </footer>
-
     </div>
+
+    <!-- Supabase JS SDK & Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-config.js"></script>
+    <script src="js/auth.js"></script>
     <script src="js/main.js"></script>
-    <script>
-        // Form submit handler to redirect to order success page
-        document.getElementById('orderForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevent page refresh
-            window.location.href = 'order_success.html'; // Redirect to order success page
-        });
-    </script>
+    <script src="js/orders.js"></script> <!-- We will create this for fetch logic -->
+
 </body>
 </html>
