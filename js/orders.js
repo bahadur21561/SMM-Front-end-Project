@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         return;
     }
 
-    // 2. Fetch Services from Supabase
+    // 2. Fetch Services from Edge Function
     loadServices();
 
     // 3. Logout Handler
@@ -23,17 +23,26 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-// Load Services into Dropdown from Supabase
+// Load Services into Dropdown from Edge Function (JAP API)
 async function loadServices() {
     const categorySelect = document.getElementById('categorySelect');
     const serviceSelect = document.getElementById('serviceSelect');
 
     try {
-        const { data: services, error } = await supabaseClient
-            .from('services')
-            .select('*');
+        // Edge Function Call
+        const response = await fetch('https://pyfhyewkadcxpvpmagnz.supabase.co/functions/v1/jap-services', {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                'Content-Type': 'application/json'
+            }
+        });
 
-        if (error) throw error;
+        const services = await response.json();
+
+        if (services.error) {
+            throw new Error(services.error);
+        }
 
         if (!services || services.length === 0) {
             categorySelect.innerHTML = '<option value="">No services available</option>';
@@ -55,7 +64,8 @@ async function loadServices() {
 
             serviceSelect.innerHTML = '<option value="">-- Choose Package --</option>';
             filteredServices.forEach(serv => {
-                serviceSelect.innerHTML += `<option value="${serv.id}" data-rate="${serv.rate}">${serv.name} - $${serv.rate}/1000</option>`;
+                // serv.service = JAP Service ID, serv.rate = 30% Marked-up Rate
+                serviceSelect.innerHTML += `<option value="${serv.service}" data-rate="${serv.rate}">${serv.name} - $${serv.rate}/1000</option>`;
             });
         });
 
