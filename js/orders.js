@@ -1,3 +1,5 @@
+const ANON_KEY = 'sb_publishable_ZVUK6e371jf21see2pD6Mg_ZbfA_qkR';
+
 // Check Session on Page Load
 document.addEventListener('DOMContentLoaded', async () => {
     // 1. Verify User Session
@@ -29,11 +31,12 @@ async function loadServices() {
     const serviceSelect = document.getElementById('serviceSelect');
 
     try {
-        // Edge Function Call
+        // Edge Function Call with Anon Key & apikey Header
         const response = await fetch('https://pyfhyewkadcxpvpmagnz.supabase.co/functions/v1/jap-services', {
             method: 'POST',
             headers: {
-                'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                'Authorization': `Bearer ${ANON_KEY}`,
+                'apikey': ANON_KEY,
                 'Content-Type': 'application/json'
             }
         });
@@ -44,7 +47,7 @@ async function loadServices() {
             throw new Error(services.error);
         }
 
-        if (!services || services.length === 0) {
+        if (!Array.isArray(services) || services.length === 0) {
             categorySelect.innerHTML = '<option value="">No services available</option>';
             return;
         }
